@@ -74,7 +74,9 @@ function 수정(no){
             }else{
                 alert("수정실패");
             }
+            location.reload();//새로고침
             호출();
+
         }
     });
 
