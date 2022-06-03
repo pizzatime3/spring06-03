@@ -10,6 +10,7 @@ function 전송(){
     data : {"content" : $("#content").val()},//보낼데이터
     success: function(re){//응답데이터
         $("#content").val("");
+        호출();
     }
    });
 }
@@ -60,24 +61,13 @@ function 삭제(no){
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
 //해당 게시물 수정 버튼을 눌렀을 때 [인수 : 게시물번호 ]
 function 수정(no){
-    //alert("현재" + no + "번 선택했습니다.");
+    alert("현재" + no + "번 선택했습니다.");
 
     $.ajax({
         url : "update",
-        data : {"no":no , "content" : $("content").val()},
+        data : {"no":no , "content" : $("#content").val()},
         success : function(re){
             if(re == "1"){
                 alert("수정성공");

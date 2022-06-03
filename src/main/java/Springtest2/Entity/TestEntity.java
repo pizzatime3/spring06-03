@@ -1,5 +1,7 @@
 package Springtest2.Entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity//해당클래스를 엔티티[DB내 테이블과 매핑] 로 사용
@@ -12,6 +14,7 @@ public class TestEntity {//클래스
 
     @Column(name="content")//DB에서 사용할 필드
     public String content;//내용 필드
+
 
 }
 //jpa : 클래스를 db테이블처럼 사용하자.

@@ -69,28 +69,22 @@ public class IndexController {
     @ResponseBody
     public String delete(HttpServletRequest request){
         //0.변수요청
-        int no = integer.parseInt(request.getParameter("no"));
+        int no = Integer.parseInt(request.getParameter("no"));
         //1.pk값 이용한 엔티티 찾기
         Optional<TestEntity> optionalTestEntity = testRepository.findById(no);
         //2.Optional객체내 엔티티 삭제
         TestEntity entity = optionalTestEntity.get();
-        testRepository.delete();
+        testRepository.delete( entity);
         return "1";
 
     }
 
-
-
-
-
-
-
     @GetMapping("/update")
     @ResponseBody
     @Transactional//트랜잭션 : 일 단위 [결과:COMMIT 혹은 ROLLBACK]
-    public String updates( HttpServletRequest request){
+    public String update( HttpServletRequest request){
         //0.변수요청
-        int no = integer.parseInt(request.getParameter("no"));
+        int no = Integer.parseInt(request.getParameter("no"));
         String content = request.getParameter("content");
 
         //1.pk값 이용한 엔티티 찾기
